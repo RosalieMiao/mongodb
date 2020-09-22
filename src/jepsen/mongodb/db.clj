@@ -289,8 +289,8 @@
   [test]
   (let [n           (:nodes test)
         shard-size  3]
-    (assert (< (* 2 shard-size) (count n))
-            (str "Need at least " (* 2 shard-size) " nodes for 1 shard"))
+    ;(assert (< (* 2 shard-size) (count n))
+    ;        (str "Need at least " (* 2 shard-size) " nodes for 1 shard"))
     (zipmap (->> (range) (map inc) (map (partial str "shard")) (cons "config"))
             (partition-all shard-size n))))
 
